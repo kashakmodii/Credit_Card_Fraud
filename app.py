@@ -149,7 +149,7 @@ if "Predict" in page:
     col_btn, col_result = st.columns([1, 3])
 
     with col_btn:
-        predict_btn = st.button("🔍 Analyze Transaction", type="primary", use_container_width=True)
+        predict_btn = st.button("🔍 Analyze Transaction", type="primary", width="stretch")
 
     if predict_btn:
         inputs = {
@@ -198,7 +198,7 @@ if "Predict" in page:
         # Breakdown
         st.markdown("#### Input Summary")
         input_df = pd.DataFrame([inputs])
-        st.dataframe(input_df, use_container_width=True)
+        st.dataframe(input_df, width="stretch")
 
 # ══════════════════════════════════════════════════════
 # PAGE 2 — EDA
@@ -217,7 +217,7 @@ elif "EDA" in page:
         path = ARTIFACT_DIR / fname
         if path.exists():
             st.subheader(title)
-            st.image(str(path), use_container_width=True)
+            st.image(str(path), width="stretch")
             st.divider()
         else:
             st.warning(f"Plot not found: {fname}. Run train_models.py first.")
@@ -245,7 +245,7 @@ elif "Model" in page:
         df_cmp = pd.read_csv(cmp_path)
         st.subheader("Model Comparison")
         st.dataframe(df_cmp.style.highlight_max(axis=0, subset=["ROC-AUC","Recall","F1-Score"],
-                                                 color="#00d4aa33"), use_container_width=True)
+                                                 color="#00d4aa33"), width="stretch")
 
     for title, fname in [
         ("ROC Curves",            "roc_curves.png"),
@@ -258,7 +258,7 @@ elif "Model" in page:
         p = ARTIFACT_DIR / fname
         if p.exists():
             st.subheader(title)
-            st.image(str(p), use_container_width=True)
+            st.image(str(p), width="stretch")
 
     st.subheader("🏆 Final Model Justification")
     st.markdown(f"""
