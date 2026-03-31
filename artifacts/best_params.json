@@ -1,0 +1,8 @@
+{
+  "subsample": 0.7,
+  "scale_pos_weight": 3,
+  "n_estimators": 200,
+  "max_depth": 7,
+  "learning_rate": 0.1,
+  "colsample_bytree": 0.8
+}

@@ -1,0 +1,17 @@
+{
+  "selected_features": [
+    "Amount",
+    "MerchantID",
+    "TransactionType",
+    "Location",
+    "Hour",
+    "DayOfWeek",
+    "Month",
+    "IsWeekend",
+    "IsNightTxn"
+  ],
+  "best_model": "XGBoost (Tuned)",
+  "best_roc_auc": 0.5084179292929294,
+  "best_recall": 0.0,
+  "fraud_rate": 0.01
+}
